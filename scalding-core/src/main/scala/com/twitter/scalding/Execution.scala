@@ -619,7 +619,9 @@ object Execution {
    */
   def fromFuture[T](fn: ConcurrentExecutionContext => Future[T]): Execution[T] = FutureConst(fn)
 
-  /** Returns a constant Execution[Unit] */
+  /**
+   * Returns a constant Execution[Unit]
+   */
   val unit: Execution[Unit] = from(())
 
   /**
